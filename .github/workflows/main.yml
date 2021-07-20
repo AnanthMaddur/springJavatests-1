@@ -16,9 +16,10 @@ jobs:
 
     steps:
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn run build
   testjobs:
     name: test
+    needs: buildjobs
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@v2
